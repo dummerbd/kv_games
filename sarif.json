@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Example",
+          "rules": [
+            {
+              "id": "safety-01",
+              "name": "Safety First",
+              "shortDescription": {
+                "text": "Look both ways before crossing"
+              },
+              "fullDescription": {
+                "text": "It's very important to look both ways before crossing the road."
+              },
+              "help": {
+                "text": "Safety first is key!",
+                "markdown": "_Safety_ **first** is key!"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "tags": [
+                  "safety"
+                ],
+                "problem.severity": "error"
+              }
+            },
+            {
+              "id": "safety-02",
+              "name": "Safety Second",
+              "help": {
+                "text": "You don't have to be that safe.",
+                "markdown": "You don't have to be _that_ safe."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "safety"
+                ],
+                "problem.severity": "warning"
+              }
+            },
+            {
+              "id": "safety-03",
+              "name": "Safety Third",
+              "help": {
+                "text": "Don't even worry about it!"
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "tags": [
+                  "safety"
+                ],
+                "problem.severity": "recommendation"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "safety-01",
+          "ruleIndex": 0,
+          "message": {
+            "text": "You really need to fix this."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "first_cythonized/main.py"
+                },
+                "region": {
+                  "startLine": 17,
+                  "endLine": 24
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "custom/v1": "123"
+          }
+        },
+        {
+          "ruleId": "safety-02",
+          "ruleIndex": 2,
+          "message": {
+            "text": "You should think about fixing this."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "first_cythonized/main.py"
+                },
+                "region": {
+                  "startLine": 26,
+                  "endLine": 28
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "custom/v1": "123"
+          }
+        },
+        {
+          "ruleId": "safety-03",
+          "ruleIndex": 2,
+          "message": {
+            "text": "Take your time :)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "first_cythonized/main.py"
+                },
+                "region": {
+                  "startLine": 44,
+                  "endLine": 45
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "custom/v1": "123"
+          }
+        }
+      ]
+    }
+  ]
+}
